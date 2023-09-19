@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent } from 'react';
 
 export type TMaskedInput = {
   onFocus: () => void;
@@ -10,5 +10,6 @@ export type TMaskedInput = {
       : (e: string | ChangeEvent<any>) => void;
   };
   value: string;
+  name: string;
   className: string;
 };

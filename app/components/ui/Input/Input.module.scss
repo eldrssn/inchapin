@@ -33,6 +33,12 @@
   }
 }
 
+.input_error {
+  .input {
+    border-bottom: 1px solid $error;
+  }
+}
+
 @media screen and (min-width: $desktop-xl) {
   .label,
   .input {

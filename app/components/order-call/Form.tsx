@@ -1,15 +1,20 @@
 import { useFormik } from 'formik';
 
 import { Input } from '@/app/components/ui/Input';
+import { usePopup } from '@/app/context/popup/PopupContext';
 import { TFormValues } from './types';
 import { FORM_INPUTS, initialValues } from './constants';
+import { validate } from './utils';
 import styles from './Form.module.scss';
 
 const Form = () => {
+  const { closePopup } = usePopup();
   const formik = useFormik<TFormValues>({
     initialValues,
+    validate,
     onSubmit: (values) => {
       console.log(values);
+      closePopup();
     },
   });
 

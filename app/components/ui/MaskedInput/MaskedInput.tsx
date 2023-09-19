@@ -11,6 +11,7 @@ const MaskedInput: FC<TMaskedInput> = ({
   onChange,
   value,
   className,
+  name,
 }) => {
   const [showMask, setShowMask] = useState(false);
 
@@ -33,6 +34,7 @@ const MaskedInput: FC<TMaskedInput> = ({
       onBlur={handleInputBlur}
       onChange={onChange}
       value={value}
+      name={name}
     />
   );
 };

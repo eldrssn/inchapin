@@ -22,10 +22,13 @@ const Input: FC<TInput> = ({ input, formik }) => {
     }
   };
 
+  const isError = formik.touched[name] && formik.errors[name];
+
   return (
     <div
       className={clsx(styles.input_box, {
         [styles.input_focused]: isFocused,
+        [styles.input_error]: isError,
       })}
     >
       <div className={styles.label_box}>
@@ -37,6 +40,7 @@ const Input: FC<TInput> = ({ input, formik }) => {
         <MaskedInput
           onFocus={handleFocus}
           onBlur={handleBlur}
+          name={name}
           onChange={formik.handleChange}
           value={formik.values[name]}
           className={styles.input}
