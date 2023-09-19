@@ -1,0 +1,73 @@
+@import '/app/styles/colors.scss';
+@import '/app/styles/breakpoints.scss';
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+
+  .burger {
+    position: relative;
+    transition: 0.4s;
+    margin: 6px 0;
+
+    &,
+    &:before,
+    &:after {
+      width: 32px;
+      height: 2px;
+      background-color: $primary;
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      transition: 0.4s;
+    }
+
+    &::before{
+      top: 6px;
+    }
+    &::after {
+      bottom: 6px;
+    }
+  }
+
+  &:hover {
+    .burger:before {
+      top: 8px; 
+    }
+
+    .burger:after {
+      bottom: 8px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-xl) {
+  .menu {
+    gap: 15px;
+    
+    .burger,
+    .burger:before,
+    .burger:after {
+      width: 38px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .menu {
+    .text {
+      display: none;
+    }
+  
+    .burger,
+    .burger:before,
+    .burger:after {
+      background-color: #000000;
+    }
+  }
+}

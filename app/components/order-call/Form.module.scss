@@ -1,0 +1,98 @@
+@import '/app/styles/colors.scss';
+@import '/app/styles/breakpoints.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 41px;
+    margin-bottom: 41px;
+  }
+
+  .submit {
+    color: $white;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: 0.98px;
+    text-transform: uppercase;
+
+    padding: 24px 69px;
+    border-radius: 100px;
+    border: 1px solid $primary;
+    background: $primary;
+    align-self: center;
+
+    &:hover {
+      background-color: $primary-hover;
+      border: 1px solid $primary-hover;
+    }
+  }
+
+  .politic {
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    opacity: 0.5;
+    margin-bottom: 30px;
+
+    .link {
+      text-decoration-line: underline;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-xl) {
+  .form {
+    .inputs {
+      gap: 49px;
+      margin-bottom: 50px;
+    }
+
+    .politic {
+      font-size: 14px;
+    }
+
+    .submit { 
+      font-size: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  .form {
+    .inputs {
+      gap: 45px;
+      margin-bottom: 50px;
+    }
+
+    .politic {
+      font-size: 11px;
+    }
+
+    .submit { 
+      padding: 20px 40px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .form {
+    .politic {
+      font-size: 12px;
+    }
+
+    .submit { 
+      padding: 18px 50px;
+      font-size: 11px;
+    }
+  }
+}

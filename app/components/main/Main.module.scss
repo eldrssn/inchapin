@@ -1,0 +1,41 @@
+@import '/app/styles/constants.scss';
+@import '/app/styles/breakpoints.scss';
+
+
+.main {
+  padding-top: $header-hight;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media screen and (min-width: $desktop-xl) {
+  .main {
+    padding-top: $header-hight-desktop-xl;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  .main {
+    padding-top: $header-hight-desktop;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .main {
+    padding-top: $header-hight-tablet;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .main {
+    padding-top: $header-hight-mobile;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

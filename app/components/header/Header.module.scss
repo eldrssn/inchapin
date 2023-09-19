@@ -1,0 +1,61 @@
+@import '/app/styles/colors.scss';
+@import '/app/styles/breakpoints.scss';
+
+.container {
+  padding: 28px 40px;
+  padding-top: 29px;
+  text-transform: uppercase;
+  font-family: 'Proxima Nova';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0.91px;
+  background-color: $white;
+  z-index: 1;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto; 
+  align-items: center;
+  column-gap: 40px;
+}
+
+@media screen and (min-width: $desktop-xl) {
+  .container {
+    padding: 40px 80px;
+    font-size: 15px;
+    letter-spacing: 1.05px;
+    column-gap: 43px;
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  .container {
+    padding: 30px;
+    column-gap: 25px;
+
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .container {
+    padding: 40px;
+    font-size: 12px;
+    letter-spacing: 0.84px;
+    column-gap: 62px;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .container {
+    padding: 20px;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between; 
+  }
+}

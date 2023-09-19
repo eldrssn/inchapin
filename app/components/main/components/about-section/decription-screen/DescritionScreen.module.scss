@@ -1,0 +1,115 @@
+@import '/app/styles/colors.scss';
+@import '/app/styles/breakpoints.scss';
+
+.block {
+  flex-basis: 50%;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+
+  .brick {
+    width: 49px;
+    height: 9px;
+    background-color: $primary;
+    margin-top: 102px;
+    margin-bottom: 50px;
+  }
+
+  .about {
+    font-size: 26px;
+    line-height: 140%;
+    margin-bottom: 100px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 160%;
+  }
+
+  .highlighted {
+    color: $primary;
+  }
+}
+
+
+@media screen and (min-width: $desktop-xl) {
+  .block {
+    .brick {
+      margin-top: 133px;
+      width: 63px;
+      height: 12px;
+      margin-bottom: 65px;
+    }
+
+    .about {
+      font-size: 34px;
+      margin-bottom: 120px;
+    }
+
+    .description {
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  .block {
+    .brick {
+      margin-top: 75px;
+      width: 35px;
+      height: 6px;
+      margin-bottom: 35px;
+    }
+
+    .about {
+      font-size: 19px;
+      margin-bottom: 65px;
+    }
+
+    .description {
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .block {
+    .title {
+      font-size: 11px;
+      margin-bottom: 20px;
+    }
+
+    .brick {
+      margin-top: 50px;
+      width: 35px;
+      height: 6px;
+      margin-bottom: 30px;
+    }
+
+    .about {
+      font-size: 19px;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .block {
+    .brick {
+      margin-top: 0;
+    }
+
+    .about {
+      font-size: 19px;
+      margin-bottom: 40px;
+    }
+
+    .description {
+      font-size: 11px;
+    }
+  }
+}

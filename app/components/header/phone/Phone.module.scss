@@ -1,0 +1,90 @@
+@import '/app/styles/breakpoints.scss';
+@import '/app/styles/colors.scss';
+
+.box {
+  display: flex;
+  gap: 40px;
+}
+
+.phone {
+  font-size: 14px;
+  font-family: inherit;
+  letter-spacing: normal;
+}
+
+.order_call {
+  text-transform: uppercase;
+  color: $primary;
+
+  position: relative;
+  transition: all 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    width: 0;
+    height: .5px;
+    background-color: $primary;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}
+
+.phone_mobile {
+  display: none;
+}
+
+@media screen and (min-width: $desktop-xl) {
+  .phone {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  .box {
+    gap: 35px;
+  }
+  
+  .phone {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: $tablet) { 
+  .phone, .order_call {
+    display: none;
+  }
+
+  .phone_mobile {
+    display: block;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    border: 1px solid $border;
+    background: url('/svg/phone.svg');
+    background-position: center;
+    
+    &:hover {
+      background-color: $border;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) { 
+  .phone_mobile {
+    width: 43px;
+    height: 41px;
+    width: 41px;
+    border: 1px solid $primary;
+
+    &:hover {
+      background-color: $primary;
+    }
+  }
+}
+

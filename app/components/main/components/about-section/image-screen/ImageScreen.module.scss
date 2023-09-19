@@ -1,0 +1,129 @@
+@import '/app/styles/colors.scss';
+@import '/app/styles/breakpoints.scss';
+
+.block {
+  flex-basis: 50%;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+
+  .photo {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .title {
+    color: $primary;
+    text-align: right;
+    font-size: 13px;
+    line-height: 140%; 
+    margin-bottom: 25px;
+  }
+
+  .photo_box {
+    position: relative;
+    height: 725px;
+    margin-bottom: 3px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 90px;
+      transform: translateX(50%);
+      right: 0;
+      width: 200px;
+      height: 200px;
+      background: url('/svg/logo-small.svg');
+      background-size: 100%;
+      background-position: center; 
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-xl) {
+  .block{
+    .title {
+      font-size: 17px;
+      margin-bottom: 33px;
+    }
+
+    .photo_box {
+      height: 905px;
+
+      &::after {
+        top: 116px;
+        width: 259px;
+        height: 259px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  .block{
+    .title {
+      font-size: 11px;
+      margin-bottom: 21px;
+    }
+
+    .photo_box {
+      height: 513px;
+
+      &::after {
+        top: 60px;
+        width: 148px;
+        height: 148px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .block{
+    .title {
+      font-size: 11px;
+      margin-bottom: 20px;
+    }
+
+    .photo_box {
+      height: 409px;
+
+      &::after {
+        top: 60px;
+        width: 81px;
+        height: 81px;
+      }
+    }
+
+    .photo {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .block{
+    .title {
+      font-size: 11px;
+      margin-bottom: 11px;
+      margin-right: 44px;
+    }
+
+    .photo_box {
+      height: 403px;
+      margin-left: -40px;
+      margin-right: 44px;
+
+      &::after {
+        top: 60px;
+        width: 87px;
+        height: 87px;
+      }
+    }
+
+    .photo {
+      object-position: 31%;
+    }
+  }
+}

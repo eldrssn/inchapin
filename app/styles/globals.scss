@@ -1,0 +1,11 @@
+@import './reset.scss';
+@import './fonts.scss';
+
+* {
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+.lock-scroll {
+  overflow: hidden;
+  position: fixed;
+}

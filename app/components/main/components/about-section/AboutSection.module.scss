@@ -1,0 +1,43 @@
+@import '/app/styles/colors.scss';
+@import '/app/styles/breakpoints.scss';
+
+.section {
+  padding-top: 70px;
+  padding-bottom: 40px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 226px;
+
+}
+
+@media screen and (min-width: $desktop-xl) {
+  .section {
+    padding-top: 100px;
+    gap: 293px;
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  .section {
+    padding-top: 90px;
+    gap: 148px;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .section {
+    margin-left: -80px;
+    padding-top: 40px;
+    gap: 94px;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .section {
+    margin: auto;
+    padding-top: 40px;
+    gap: 56px;
+    flex-direction: column;
+  }
+}

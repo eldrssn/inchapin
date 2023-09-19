@@ -1,0 +1,55 @@
+@import '/app/styles/colors.scss';
+@import '/app/styles/breakpoints.scss';
+
+.label,
+.input {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+.label {
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+  left: 0;
+  transition: top 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+.input_box {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  border-bottom: 1px solid $border-input;
+}
+
+.input_focused {
+  .label {
+    top: -20px;
+    font-size: 80%;
+  }
+}
+
+@media screen and (min-width: $desktop-xl) {
+  .label,
+  .input {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  .label,
+  .input {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .label,
+  .input {
+    font-size: 14px;
+  }
+}
