@@ -2,7 +2,6 @@
 
 import { useRef, useEffect } from 'react';
 import styles from './VideoPlayer.module.scss';
-import { useEscapeKey } from '@/app/hooks';
 
 const VideoPlayer = ({ closeVideo }: { closeVideo: () => void }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -16,10 +15,23 @@ const VideoPlayer = ({ closeVideo }: { closeVideo: () => void }) => {
           videoElement.requestFullscreen();
         }
       });
+
+      const handleFullscreenChange = () => {
+        if (!document.fullscreenElement) {
+          closeVideo();
+        }
+      };
+
+      document.addEventListener('fullscreenchange', handleFullscreenChange);
+
+      return () => {
+        document.removeEventListener(
+          'fullscreenchange',
+          handleFullscreenChange
+        );
+      };
     }
   }, []);
-
-  useEscapeKey(() => closeVideo());
 
   return (
     <div className={styles.video_container}>
